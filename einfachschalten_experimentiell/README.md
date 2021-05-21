@@ -1,3 +1,7 @@
+Script wird weiterverfolgt unter CS_Steuerung.sh in webserver
+
+
+
 UK
 Testen verändern der Schaltschwellen
 
