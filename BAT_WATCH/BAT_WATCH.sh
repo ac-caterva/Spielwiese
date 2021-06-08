@@ -1,5 +1,19 @@
 #!/bin/bash 
 #v1 Ersterstellung Script um Sonyakkus zu beobachten 
+#v2 Sekundenintervall muss mit angegeben werden
+
+
+if [ $# -ne 1 ]
+then
+	echo "Nach dem Scipt muss die Intervallzeit in Sekunden angegeben werden. Elaubte Werte 60 bis 600 Sekunden. Beispiel:     $0 120" 
+	exit 3
+else 
+	if ([ $1 -lt 60 ] || [ $1 -gt 600 ])
+	then
+		echo "Intervallzeit nicht im Tolleranzbereich"
+		exit 3
+	fi
+fi
 
 _DATUM_=$(date +"%Y-%m-%d_%H-%M")
 _LOGFILE_=/var/log/BAT_WATCH_${_DATUM_}.txt
@@ -15,7 +29,7 @@ do
 		do (echo "reg ${i}"; sleep 0.3; echo "exit") | netcat localhost 1338; 
  		done | grep ^3 | tee -a ${_LOGFILE_}	
 	fi
-	sleep 240
+	sleep $1
 	
 done
 
