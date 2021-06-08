@@ -5,7 +5,8 @@
 
 if [ $# -ne 1 ]
 then
-	echo "Nach dem Scipt muss die Intervallzeit in Sekunden angegeben werden. Elaubte Werte 60 bis 600 Sekunden. Beispiel:     $0 120" 
+	echo "Nach dem Scipt muss die Intervallzeit in Sekunden angegeben werden. Erlaubte Werte 10 bis 600 Sekunden.  Beispiel:     $0 120" 
+	echo "Laufzeit der Abfragefunktion im Script ca 64 Sekunden!"
 	exit 3
 else 
 	if ( [ $1 -lt 60 ] || [ $1 -gt 600 ] )
