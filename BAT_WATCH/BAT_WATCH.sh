@@ -8,9 +8,9 @@ then
 	echo "Nach dem Scipt muss die Intervallzeit in Sekunden angegeben werden. Elaubte Werte 60 bis 600 Sekunden. Beispiel:     $0 120" 
 	exit 3
 else 
-	if ([ $1 -lt 60 ] || [ $1 -gt 600 ])
+	if ( [ $1 -lt 60 ] || [ $1 -gt 600 ] )
 	then
-		echo "Intervallzeit nicht im Tolleranzbereich"
+		echo "Intervallzeit nicht im Toleranzbereich"
 		exit 3
 	fi
 fi
